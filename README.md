@@ -59,3 +59,8 @@ git remote add origin <URL> (conecta com o repositorio remoto)
 ```
 git push -u origin main (envia o commit para o repositorio remoto)
 ```
+
+## pull
+```
+git pull (puxa as alterações do repositorio remoto para o local)
+```
