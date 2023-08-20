@@ -42,10 +42,20 @@ git log (mostra o log do commit)
 
 ## reset
 ```
-git reset --op <hash> (desfaz um commit [op pode ser: soft, mixed ou hard])
+git reset --op <hash> (desfaz um commit)
+
+op pode ser: 
+soft: 
+mixed:
+hard: Retorna os arquivos até aquele commit selecionado
 ```
 
 ## remote add
 ```
 git remote add origin <URL> (conecta com o repositorio remoto)
+```
+
+## push
+```
+git push -u origin main (envia o commit para o repositorio remoto)
 ```
