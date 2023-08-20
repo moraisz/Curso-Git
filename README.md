@@ -10,8 +10,10 @@ git init (comando para inicializar/ criar um repositorio Git)
 ```
 
 ## clone
+
 ```
 git clone <URL> (clonar um repositório direto do GitHub)
+git clone <URL> --branch <branch> --single-branch (clonar uma branch para o repositorio local)
 ```
 
 ## status
@@ -64,3 +66,28 @@ git push -u origin main (envia o commit para o repositorio remoto)
 ```
 git pull (puxa as alterações do repositorio remoto para o local)
 ```
+
+## checkout
+```
+git checkout -b <branch> (cria um branch)
+git checkout <branch> (muda para a branch desejada)
+```
+
+## merge
+```
+git merge <branch> (mescla a branch selecionada para a main)
+git merge origin/main (mescla o repositorio remoto com o local)
+```
+
+## branch
+```
+git branch (vê as branch existentes)
+git branch -v (vê o último commit de cada branch)
+git branch -d <branch> (deleta a branch selecionada)
+```
+
+## fetch
+```
+git fetch origin main (baixa repositorio remoto sem mesclar com o local)
+```
+
