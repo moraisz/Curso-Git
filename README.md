@@ -91,3 +91,17 @@ git branch -d <branch> (deleta a branch selecionada)
 git fetch origin main (baixa repositorio remoto sem mesclar com o local)
 ```
 
+## 📗 Convenção de Commits
+
+| Tipo de Commit | Descrição                                                                                                 |
+| -------------- | --------------------------------------------------------------------------------------------------------- |
+| `feat`         | Adiciona uma nova funcionalidade ao projeto.                                                              |
+| `fix`          | Corrige um bug ou problema no projeto.                                                                    |
+| `docs`         | Altera a documentação do projeto. Ex.: README, comentários no código.                                     |
+| `style`        | Realiza mudanças na aparência, sem alterar a funcionalidade.                                              |
+| `refactor`     | Realiza mudanças no código que não alteram a funcionalidade.                                              |
+| `test`         | Adiciona ou modifica testes no projeto.                                                                   |
+
+##### Exemplo commit
+
+`feat: adicionado novo arquivo`
