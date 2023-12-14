@@ -1,6 +1,6 @@
-# Resumo do curso de Git
+# Comandos do Git
 
-Markdown com resumo do curso de Git e GitHub da DIO.
+Markdown com resumo do curso de Git e GitHub da DIO junto com conhecimento que coletei com estudos e pesquisas por fora, será usado o terminal para executar os comandos.
 
 ## 🔧 Configurações iniciais
 ```
@@ -9,95 +9,102 @@ git config --global user.email "email@exemplo.com"
 git config --global init.defaultBranch main
 ```
 
-## 👨‍💻 Comandos
+## 👨‍💻 Comandos essenciais
 
-## init
+Para iniciar um repositório local, deve ser usado o comando `git init`:
 ```
-git init (comando para inicializar/ criar um repositorio Git)
+git init
 ```
 
-## clone
+Após ser criado o repositório local, deve fazer a conexão com o remoto, usando o comando `git remote add`:
+```
+git remote add origin <URL>
+```
+
+Aconselho acompanhar o processo constantemente ao decorrer do processo, pra isso use o comando `git status`:
+```
+git status
+```
+
+para adicionar os arquivos e preparar o commit deve ser usando o comando `git add` e após, fazer o commit com `git commit`. Recomendo fazer o commit de grupos de arquivos separados, para fazer uma mensagem individual.
+```
+git add <arquivo>
+git commit -m "mensagem"
+```
+
+Após esse processo, só falta fazer o push para o repositório remoto, para isso use o comando `git push`, como mostrado abaixo:
+```
+git push -u origin main
+```
+
+## 🧾 Comandos extras
+
+### git commit --amend
+```
+git commit --amend -m "msg" (renomeia o commit)
+```
+
+### git clone
 ```
 git clone <URL> (clonar um repositório direto do GitHub)
 git clone <URL> --branch <branch> --single-branch (clonar uma branch para o repositorio local)
 ```
 
-## status
-```
-git status (checar o status do Git)
-```
-
-## add
-```
-git add (adiciona arquivos e prepara para o commit)
-```
-
-## commit
-```
-git commit -m "msg" (criar um commit com uma mensagem)
-git commit --amend -m "msg" (renomeia o commit)
-```
-
-## restore
+### git restore
 ```
 git restore <file> (restaura as mudanças de um arquivo)
 ```
 
-## log
+### git log
 ```
 git log (mostra o log do commit)
 ```
 
-## reset
+### git reset
 ```
-git reset --op <hash> (desfaz um commit)
+git reset --<op> <hash> (desfaz um commit)
+```
 
 op pode ser: 
-soft: 
-mixed:
-hard: Retorna os arquivos até aquele commit selecionado
-```
+* soft:  Move o branch atual para um commit específico, mas mantém as alterações do commit no índice 
 
-## remote add
-```
-git remote add origin <URL> (conecta com o repositorio remoto)
-```
+* mixed (opção padrão se nenhuma opção for fornecida): Move o branch atual para um commit específico e remove as alterações desses commits do índice (staging area), mas mantém as alterações nos arquivos de trabalho.
 
-## push
-```
-git push -u origin main (envia o commit para o repositorio remoto)
-```
+* hard: Move o branch atual para um commit específico, descartando completamente todas as alterações posteriores desse commit.
 
-## pull
+
+### git pull
 ```
 git pull (puxa as alterações do repositorio remoto para o local)
 ```
 
-## checkout
+### git checkout
 ```
 git checkout -b <branch> (cria um branch)
 git checkout <branch> (muda para a branch desejada)
 ```
 
-## merge
+### git merge
 ```
 git merge <branch> (mescla a branch selecionada para a main)
 git merge origin/main (mescla o repositorio remoto com o local)
 ```
 
-## branch
+### git branch
 ```
 git branch (vê as branch existentes)
 git branch -v (vê o último commit de cada branch)
 git branch -d <branch> (deleta a branch selecionada)
 ```
 
-## fetch
+### git fetch
 ```
 git fetch origin main (baixa repositorio remoto sem mesclar com o local)
 ```
 
 ## 📗 Convenção de Commits
+Aqui está algumas boas práticas de commits:
+
 
 | Tipo de Commit | Descrição                                                                                                 |
 | -------------- | --------------------------------------------------------------------------------------------------------- |
@@ -108,6 +115,8 @@ git fetch origin main (baixa repositorio remoto sem mesclar com o local)
 | `refactor`     | Realiza mudanças no código que não alteram a funcionalidade.                                              |
 | `test`         | Adiciona ou modifica testes no projeto.                                                                   |
 
-##### Exemplo commit
+Aqui está um exemplo de commit com boas práticas, recomenda-se fazer o comentário em inglês.
+```
+docs: Update README.md
+```
 
-`feat: adicionado novo arquivo`
